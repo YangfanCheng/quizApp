@@ -10,12 +10,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Lobster|Rock+Salt' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="css/music.css">
 	<!-- Compiled and minified JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
-
+  <script src="songs.js"></script>
 	<script src="script.js"></script>
     <style>
   	h2{
@@ -26,68 +25,6 @@
 
 
 <body>
-<!--facebook plugin-->
-<script>
-  var name;
-  var facebookName;
-  function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    if (response.status === 'connected') {
-      testAPI();
-    } else if (response.status === 'not_authorized') {
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
-    } else {
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
-    }
-  }
-
-  function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
-
-  window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '533419866824832',
-    cookie     : true,  // enable cookies to allow the server to access 
-                        // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.2' // use version 2.2
-  });
-
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-
-  };
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
-  function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
-    });
-    facebookName = response.name;
-  }
-
-</script>
-
-<!--
-  Below we include the Login Button social plugin. This button uses
-  the JavaScript SDK to present a graphical Login button that triggers
-  the FB.login() function when clicked.
--->
 
   <div class= "navbar-fixed">
   <nav class="grey darken-4">
@@ -147,7 +84,7 @@
       <p>are you sure to go back to home screen?</p>
     </div>
     <div class="modal-footer">
-      <a href="javascript:location.reload();" class=" modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
+      <a href="index.html" class=" modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
       <a class="modal-action modal-close waves-effect waves-green btn-flat">No</a>
     </div>
   </div>
@@ -166,8 +103,8 @@
   </div>
   <ul class="hoverable" id="genre">
     <li class="pop">pop</li>
-    <li class="classical">classical</li>
-    <li class="blues">blues</li>
+    <li class="hhRB">hip hop</li>
+    <li class="edm">EDM-Dance</li>
     <li class="rock">rock</li>
   </ul>
 
@@ -176,25 +113,12 @@
     <div class="indeterminate"></div>
   </div>
 
-  <!--audio
   <div class="audio" align="center" >
-    <audio controls id="mp3" >
+    <audio controls id="audioplayer" >
       <source src="" type="audio/mp3">
     </audio>
   </div>
-  <-->
-  <div class="audio" align="center" >
-    <audio id="music" >
-      <source src="" type="audio/mp3">
-    </audio>
-  </div>
-
-  <div id="audioplayer">
-    <button id="pButton" class="play" onclick="play()"></button>
-    <div id="timeline">    
-          <div id="playhead"></div>
-    </div>
-  </div>
+  
 
 
   <div id="choices" align="center">
@@ -208,7 +132,7 @@
 
 
   <div class="score">
-    <kbd>Your Score: <span id="counter" style="color:yellow">0</span></kbd>
+    <kbd>Your Score: <span id="counter" style="color:yellow">0</span></kdb>
   </div>
 
   <div class="stars">
@@ -257,18 +181,6 @@
           <label for="icon_prefix">User Name</label>
       </div>
     
-      <fb:login-button scope="public_profile,email" data-size="large" data-max-rows="10" onlogin="checkLoginState();">
-      </fb:login-button>
-
-      <div id="status">
-      </div>
-      <div style="left:0;bottom:0;"
-        class="fb-like"
-        data-share="true"
-        data-width="200px"
-        data-show-faces="true">
-      </div>
   </div>
-<script src="js/index.js"></script>
 </body>
 </html>

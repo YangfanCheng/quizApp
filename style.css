@@ -10,6 +10,10 @@ body{
     background: -webkit-linear-gradient(to left, #DE6262 , #FFB88C); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #DE6262 , #FFB88C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+audio{
+    width:70%;
+    margin:10px auto;
+}
 .initial_hide,#genre,#choices,.progress,#scoreboard,#spongebob{
     display:none;
 }
@@ -55,17 +59,17 @@ body{
     background-size: 100%;
     background-repeat: no-repeat;
 }
-.classical{
+.hhRB{
     background: #207d59;
     background-color:rgba(0, 0, 0, 0.5);
-    background-image: url("images/classical.jpg");
-    background-size: 100%;
+    background-image: url("images/hhRB.jpg");
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
-.blues{
+.edm{
     background: #FFFF00;
     background-color:rgba(0, 0, 0, 0.5);
-    background-image: url("images/blues.jpg");
+    background-image: url("images/edm.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
