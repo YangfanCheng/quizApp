@@ -1,4 +1,5 @@
-//all songs
+//ran into cross domain issues, then freaking capcha... ended up resorting to local storage
+//just a list of all songs
 var questions = {
 	"pop":[
 	{

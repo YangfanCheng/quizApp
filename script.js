@@ -1,5 +1,6 @@
 /*****simple audioplayerQuiz app
 ******authored by Yangfan
+******git
 ******/
 
 function newQ(n, genre){
